@@ -19,7 +19,7 @@ public class Solution {
         String s;
         while (true) {
             s = reader.readLine();
-            if (s.equals("")) break;
+            if (s.isEmpty()) break;
             else {
                 cat = new CatFactory().getCatByKey(s);
                 System.out.println(cat.toString());
