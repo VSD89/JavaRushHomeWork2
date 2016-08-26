@@ -35,6 +35,7 @@ public class Solution {
                 if (data%2==0)
                     num.add(data); //если число четное - добавляем в список
             }
+            sc.close();
             Collections.sort(num);
             for (int i : num)
                 System.out.println(i);
