@@ -36,8 +36,8 @@ public class Solution {
                     num.add(data); //если число четное - добавляем в список
             }
             Collections.sort(num);
-            for (int s : num)
-                System.out.println(s);
+            for (int i : num)
+                System.out.println(i);
         }
         catch (IOException e) {
             e.printStackTrace();
