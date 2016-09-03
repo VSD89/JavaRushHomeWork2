@@ -26,7 +26,7 @@ public class Solution {
         }
 
         public Object getAmount() {
-            return getMoney().amount;
+            return amount;
         }
     }
 }
