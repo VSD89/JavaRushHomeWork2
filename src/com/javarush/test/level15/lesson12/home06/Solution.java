@@ -17,12 +17,9 @@ First name
 */
 
 public class Solution {
-    static {
-        init();
-    }
-    static {
-        System.out.println("Static block");
-    }
+    static { init(); }
+
+    static { System.out.println("Static block"); }
 
     {
         System.out.println("non-static block");
@@ -32,7 +29,6 @@ public class Solution {
     public int i = 6;
 
     public String name = "First name";
-
 
     public Solution() {
         System.out.println("Solution constructor");
@@ -50,7 +46,6 @@ public class Solution {
 
     public static void printAllFields(Solution obj) {
         System.out.println("static void printAllFields");
-
         System.out.println(obj.i);
         System.out.println(obj.name);
     }
