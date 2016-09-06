@@ -37,7 +37,6 @@ public class Solution {
             int i = s.indexOf('?');
             String obj = "";
             String parameters[] = s.substring(i+1).split("&");
-//            System.out.println(s.substring(i+1));
             for (int j = 0; j < parameters.length; j++) {
                 String line = parameters[j];
                 if (line.contains("obj=")) {
