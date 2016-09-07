@@ -39,22 +39,27 @@ public class Solution {
             String parameters[] = s.substring(i+1).split("&");
             for (int j = 0; j < parameters.length; j++) {
                 String line = parameters[j];
-                if (line.contains("obj=")) {
+                if ((line.contains("obj="))&&line.indexOf("obj=")==0) {
                     obj = line.substring(line.indexOf('=')+1);
                     line = line.substring(0, line.indexOf('='));
-                    System.out.print(line + " ");
+                    System.out.print(line);
                 }
                 else if (line.contains("=")) {
                     line = line.substring(0, line.indexOf('='));
-                    System.out.print(line + " ");
+                    System.out.print(line);
                 }
-                else System.out.print(line + " ");
+                else System.out.print(line);
+                if (!(j == parameters.length - 1))
+                    System.out.print(" ");
             }
             if (!obj.isEmpty()) {
                 System.out.println();
-                if (isNumber(obj))
+
+                try {
                     alert(Double.parseDouble(obj));
-                else alert(obj);
+                } catch (NumberFormatException e) {
+                    alert(obj);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -69,17 +74,4 @@ public class Solution {
         System.out.println("String " + value);
     }
 
-    public static boolean isNumber(String s) {
-        if (s.length() == 0) return false;
-
-        char[] chars = s.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            char c = chars[i];
-            if ((i != 0 && c == '-') //есть '-' внутри строки
-                    || (!Character.isDigit(c) && c != '-') ) { // не цифра и не начинается с '-'
-                return false;
-            }
-        }
-        return true;
-    }
 }
