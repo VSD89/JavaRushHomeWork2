@@ -33,7 +33,6 @@ public class Solution {
         String s;
         try {
             s = reader.readLine();
-            char ch = '?';
             int i = s.indexOf('?');
             String obj = "";
             String parameters[] = s.substring(i+1).split("&");
