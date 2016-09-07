@@ -53,7 +53,6 @@ public class Solution {
             }
             if (!obj.isEmpty()) {
                 System.out.println();
-
                 try {
                     alert(Double.parseDouble(obj));
                 } catch (NumberFormatException e) {
