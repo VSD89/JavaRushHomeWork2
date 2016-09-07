@@ -27,40 +27,36 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Solution {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //add your code here
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String s;
-        try {
-            s = reader.readLine();
-            int i = s.indexOf('?');
-            String obj = "";
-            String parameters[] = s.substring(i+1).split("&");
-            for (int j = 0; j < parameters.length; j++) {
-                String line = parameters[j];
-                if ((line.contains("obj="))&&line.indexOf("obj=")==0) {
-                    obj = line.substring(line.indexOf('=')+1);
-                    line = line.substring(0, line.indexOf('='));
-                    System.out.print(line);
-                }
-                else if (line.contains("=")) {
-                    line = line.substring(0, line.indexOf('='));
-                    System.out.print(line);
-                }
-                else System.out.print(line);
-                if (!(j == parameters.length - 1))
-                    System.out.print(" ");
+        s = reader.readLine();
+        int i = s.indexOf('?');
+        String obj = "";
+        String parameters[] = s.substring(i+1).split("&");
+        for (int j = 0; j < parameters.length; j++) {
+            String line = parameters[j];
+            if ((line.contains("obj="))&&line.indexOf("obj=")==0) {
+                obj = line.substring(line.indexOf('=')+1);
+                line = line.substring(0, line.indexOf('='));
+                System.out.print(line);
             }
-            if (!obj.isEmpty()) {
-                System.out.println();
-                try {
-                    alert(Double.parseDouble(obj));
-                } catch (NumberFormatException e) {
-                    alert(obj);
-                }
+            else if (line.contains("=")) {
+                line = line.substring(0, line.indexOf('='));
+                System.out.print(line);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            else System.out.print(line);
+            if (!(j == parameters.length - 1))
+                System.out.print(" ");
+        }
+        if (!obj.isEmpty()) {
+            System.out.println();
+            try {
+                alert(Double.parseDouble(obj));
+            } catch (NumberFormatException e) {
+                alert(obj);
+            }
         }
     }
 
