@@ -16,13 +16,13 @@ public class Solution {
     }
 
     public static void ourInterruptMethod() {
-        TestThread.isClockRun = true;
+        TestThread.cancel = true;
     }
 
     public static class TestThread implements Runnable {
-        public static boolean isClockRun;
+        public static boolean cancel;
         public void run() {
-            while(!isClockRun) {
+            while(!cancel) {
                 try {
                     System.out.println("he-he");
                     Thread.sleep(500);
