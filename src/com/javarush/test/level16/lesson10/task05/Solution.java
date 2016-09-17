@@ -51,7 +51,7 @@ public class Solution {
         public void run() {
             //fix 2 variables - исправь 2 переменных
             Thread currentThread = Thread.currentThread();
-            boolean isCurrentThreadInterrupted = false;
+            boolean isCurrentThreadInterrupted = currentThread.isInterrupted();
             String threadName = currentThread.getName();
 
             try {
