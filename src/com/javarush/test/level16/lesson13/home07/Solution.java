@@ -76,16 +76,15 @@ public class Solution {
                     for (i = 0; i < steps.size(); i++) {
                         System.out.println(getName() + ":" + OnlineGame.steps.get(i % steps.size()));
 
-                        Thread.sleep(1000 / rating);}
-                        if (i == steps.size()) {
+                        Thread.sleep(1000 / rating);
+                    }
+                    if (i == steps.size()) {
 
-                            System.out.println(getName() + ":победитель!");
-                            isWinnerFound = true;
-                        }
-//                    else
-//                    System.out.println(this.getName() + ":проиграл");
-
-                }} catch (InterruptedException e)
+                        System.out.println(getName() + ":победитель!");
+                        isWinnerFound = true;
+                    }
+                }
+            } catch (InterruptedException e)
             {
                 System.out.println(this.getName() + ":проиграл");
             }
