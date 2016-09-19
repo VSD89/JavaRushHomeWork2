@@ -79,13 +79,11 @@ public class Solution {
                         Thread.sleep(1000 / rating);
                     }
                     if (i == steps.size()) {
-
                         System.out.println(getName() + ":победитель!");
                         isWinnerFound = true;
                     }
                 }
-            } catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 System.out.println(this.getName() + ":проиграл");
             }
         }
