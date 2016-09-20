@@ -51,7 +51,7 @@ public class Solution {
 
         public void run() {
             //add your code here - добавьте код тут
-            while (!currentThread().isInterrupted()) {
+            while (!isInterrupted()) {
 
                 try {
                     String s = reader.readLine();
