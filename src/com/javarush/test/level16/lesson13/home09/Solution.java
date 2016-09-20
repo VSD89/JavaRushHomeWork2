@@ -27,7 +27,7 @@ import java.io.InputStreamReader;
 public class Solution {
     public static volatile BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     public static class Read3Strings extends Thread {
-        String str = "";
+        public String str = "";
         @Override
         public void run() {
             for (int i = 0; i < 3; i++) {
