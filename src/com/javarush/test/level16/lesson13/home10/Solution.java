@@ -42,21 +42,16 @@ public class Solution {
             return null;
         }
 
-
         @Override
-        public void start() {
-
-        }
+        public void start() {}
     }
 
     public static void main(String[] args) throws InterruptedException {
-
         systemOutPrintln(firstFileName);
         systemOutPrintln(secondFileName);
     }
 
     public static void systemOutPrintln(String fileName) throws InterruptedException {
-
         ReadFileInterface f = new ReadFileThread();
         f.setFileName(fileName);
         f.start();
