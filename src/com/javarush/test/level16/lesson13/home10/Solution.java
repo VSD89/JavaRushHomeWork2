@@ -51,15 +51,11 @@ public class Solution {
 
     public static void main(String[] args) throws InterruptedException {
 
-
-
         systemOutPrintln(firstFileName);
         systemOutPrintln(secondFileName);
     }
 
     public static void systemOutPrintln(String fileName) throws InterruptedException {
-
-
 
         ReadFileInterface f = new ReadFileThread();
         f.setFileName(fileName);
