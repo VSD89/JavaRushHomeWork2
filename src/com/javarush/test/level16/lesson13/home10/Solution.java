@@ -20,30 +20,17 @@ import java.io.*;
 public class Solution {
     public static String firstFileName;
     public static String secondFileName;
-    public static BufferedReader reader = new BufferedReader (new InputStreamReader(System.in));
 
     static {
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
         try {
             firstFileName = reader.readLine();
             secondFileName = reader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static class ReadFileThread extends Thread implements ReadFileInterface {
-        @Override
-        public void setFileName(String fullFileName) {
-
-        }
-
-        @Override
-        public String getFileContent() {
-            return null;
-        }
-
-        @Override
-        public void start() {}
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -55,6 +42,7 @@ public class Solution {
         ReadFileInterface f = new ReadFileThread();
         f.setFileName(fileName);
         f.start();
+        f.join();
         System.out.println(f.getFileContent());
     }
 
@@ -67,5 +55,41 @@ public class Solution {
         void join() throws InterruptedException;
 
         void start();
+    }
+
+    public static class ReadFileThread  extends Thread implements ReadFileInterface {
+        public String fileName;
+        public String line;
+        public BufferedReader reader;
+
+        @Override
+        public void setFileName(String fullFileName) {
+            fileName = fullFileName;
+        }
+
+        @Override
+        public String getFileContent() {
+            String fileContent = "";
+            try {
+                reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+
+                while ((line = reader.readLine()) != null) {
+                    fileContent += line + " ";
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return fileContent;
+        }
+
+        @Override
+        public void run() {
+            getFileContent();
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
