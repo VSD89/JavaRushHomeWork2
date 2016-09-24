@@ -29,16 +29,6 @@ public class Solution {
     }
 
     public static void main(String[] args) throws IOException {
-//        MessageThread thread4 = (MessageThread) threads.get(3);
-//        thread4.run();
-//        thread4.showWarning();
-//        try {
-//            thread4.join();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-////        thread4.sleep(1000);
-//        System.out.println(thread4.isAlive());
         Thread thread4 = threads.get(3);
         Message message = (Message) thread4;
         thread4.start();
@@ -85,22 +75,6 @@ public class Solution {
     }
 
     public static class MessageThread extends Thread implements Message {
-        //        @Override
-//        public void run() {
-//            while (!isInterrupted()) {
-//                System.out.println("sfsf");
-//            }
-//        }
-//        @Override
-//        public void showWarning() {
-//            interrupt();
-//            try {
-//                join();
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
         @Override
         public void run() {
             Thread current = Thread.currentThread();
