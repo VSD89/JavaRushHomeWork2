@@ -77,15 +77,14 @@ public class Solution {
     public static class MessageThread extends Thread implements Message {
         @Override
         public void run() {
-            Thread current = Thread.currentThread();
-            while(!current.interrupted()) {}
+            while(!interrupted()) {}
         }
 
         @Override
         public  void showWarning() {
-            this.interrupt();
+            interrupt();
             try {
-                this.join();
+                join();
             } catch(Exception e) {}
         }
     }
