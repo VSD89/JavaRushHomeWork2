@@ -22,7 +22,7 @@ public class Solution {
         int av = inputStream.available();
         byte[] buffer2;
         byte[] buffer3;
-        if (av%2==0) {
+        if (av % 2 == 0) {
             buffer2 = new byte[av / 2];
             buffer3 = new byte[av / 2];
         } else {
