@@ -6,6 +6,10 @@ public class Hippodrome {
 
     ArrayList<Horse> horses = new ArrayList<Horse>();
 
+    public ArrayList<Horse> getHorses() {
+        return horses;
+    }
+
     public static void main(String[] args) {
 
     }
