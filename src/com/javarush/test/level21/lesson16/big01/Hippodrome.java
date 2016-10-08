@@ -46,5 +46,6 @@ public class Hippodrome {
         horses.add(Mashka);
         horses.add(Romashka);
         horses.add(Fast);
+        game.run();
     }
 }
