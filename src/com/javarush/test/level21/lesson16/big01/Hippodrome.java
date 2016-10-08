@@ -4,13 +4,21 @@ import java.util.ArrayList;
 
 public class Hippodrome {
 
-    ArrayList<Horse> horses = new ArrayList<Horse>();
+    static ArrayList<Horse> horses = new ArrayList<Horse>();
 
     public ArrayList<Horse> getHorses() {
         return horses;
     }
 
-    public static void main(String[] args) {
+    public static Hippodrome game;
 
+    public static void main(String[] args) {
+        game = new Hippodrome();
+        Horse Mashka = new Horse("Mashka", 3, 0);
+        Horse Romashka = new Horse("Romashka", 3, 0);
+        Horse Fast = new Horse("Fast", 3, 0);
+        horses.add(Mashka);
+        horses.add(Romashka);
+        horses.add(Fast);
     }
 }
