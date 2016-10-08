@@ -28,7 +28,13 @@ public class Hippodrome {
         }
     }
 
-    public void print() {}
+    public void print() {
+        for (int i = 0; i < getHorses().size() ; i++) {
+            getHorses().get(i).print();
+        }
+        System.out.println();
+        System.out.println();
+    }
 
     public static Hippodrome game;
 
