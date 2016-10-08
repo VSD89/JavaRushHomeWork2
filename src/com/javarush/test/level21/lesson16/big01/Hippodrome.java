@@ -14,10 +14,19 @@ public class Hippodrome {
         for (int i = 0; i < 100; i++) {
             move();
             print();
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public void move() {}
+    public void move() {
+        for (int i = 0; i < getHorses().size() ; i++) {
+            getHorses().get(i).move();
+        }
+    }
 
     public void print() {}
 
