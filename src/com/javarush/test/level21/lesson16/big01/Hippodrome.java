@@ -10,7 +10,12 @@ public class Hippodrome {
         return horses;
     }
 
-    public void run() {}
+    public void run() {
+        for (int i = 0; i < 100; i++) {
+            move();
+            print();
+        }
+    }
 
     public void move() {}
 
