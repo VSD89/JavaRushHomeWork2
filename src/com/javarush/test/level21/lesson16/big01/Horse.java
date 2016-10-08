@@ -44,6 +44,5 @@ public class Horse {
             System.out.print(".");
         }
         System.out.println(getName());
-
     }
 }
