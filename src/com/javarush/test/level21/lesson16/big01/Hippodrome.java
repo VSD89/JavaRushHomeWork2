@@ -10,6 +10,12 @@ public class Hippodrome {
         return horses;
     }
 
+    public void run() {}
+
+    public void move() {}
+
+    public void print() {}
+
     public static Hippodrome game;
 
     public static void main(String[] args) {
