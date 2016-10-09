@@ -18,8 +18,9 @@ public class Solution {
         int max = inputStream.read();
         while (inputStream.available() > 0) {
             int data = inputStream.read(); // прочитать очередной байт в переменную data
-            if (data > max)
+            if (data > max) {
                 max = data;
+            }
         }
         System.out.println(max);
         reader.close();
