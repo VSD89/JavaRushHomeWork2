@@ -20,8 +20,7 @@ public class AmigoOutputStream extends FileOutputStream {
         this.original = stream;
     }
 
-    public void close() throws IOException
-    {
+    public void close() throws IOException {
         original.flush();
         original.write("JavaRush © 2012-2013 All rights reserved.".getBytes());
         original.close();
