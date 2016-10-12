@@ -3,6 +3,7 @@ package com.javarush.test.level18.lesson08.task03;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 /* AmigoOutputStream
 1 Измените класс AmigoOutputStream так, чтобы он стал Wrapper-ом для класса FileOutputStream. Используйте наследование.
@@ -12,12 +13,17 @@ import java.io.IOException;
 2.3 закрыть поток методом close()
 */
 
-public class AmigoOutputStream extends FileOutputStream {
+public class AmigoOutputStream extends OutputStream {
     public static String fileName = "C:/tmp/result.txt";
     private FileOutputStream original;
-    public AmigoOutputStream (FileOutputStream stream) throws IOException {
-        super(fileName);
+
+    public AmigoOutputStream(FileOutputStream stream) throws IOException {
         this.original = stream;
+    }
+
+    @Override
+    public void write(int b) throws IOException {
+        original.write(b);
     }
 
     public void close() throws IOException {
