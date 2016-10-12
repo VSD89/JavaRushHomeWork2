@@ -2,6 +2,7 @@ package com.javarush.test.level22.lesson18.big01;
 
 public class Tetris {
 
+    public static Tetris game;
     public Field field;
     public Figure figure;
 
@@ -13,7 +14,12 @@ public class Tetris {
         return figure;
     }
 
-    public static void main(String[] args) {
+    public void run(){}
 
+    public void step(){}
+
+    public static void main(String[] args) {
+        game = new Tetris();
+        game.run();
     }
 }
