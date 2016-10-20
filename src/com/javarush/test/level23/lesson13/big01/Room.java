@@ -149,6 +149,11 @@ public class Room
      * Прогрмма делает паузу, длинна которой зависит от длинны змеи.
      */
     public void sleep()
-    {
+    {int delay = snake.getSections().size() == 1 ? 500  : 500 - 20 * snake.getSections().size();
+        try {
+            Thread.sleep(delay > 200 ? delay : 200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
